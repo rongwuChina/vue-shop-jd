@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .DS_Store
 node_modules/
 /dist/
@@ -15,3 +16,6 @@ selenium-debug.log
 *.njsproj
 *.sln
 
+=======
+protity.html
+>>>>>>> 856bfc319796cb3480c41e817011fa30cc0efc1e
