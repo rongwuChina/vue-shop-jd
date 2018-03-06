@@ -164,14 +164,14 @@
              
     
   </script>
-  <style type="text/css" scope>
+  <style type="text/css">
   @import url('../assets/css/plugins/swiper.min.css');
 
 
     .home-contain:before{
           content:'';
           display: block;
-          height:42px;
+          height:52px;
     }
     .home-contain:after{
           content:'';
@@ -246,5 +246,7 @@
         font-size: 0.8rem;
         line-height: 28px;
     }
-
+    a {
+        color: #333;
+    }
   </style>

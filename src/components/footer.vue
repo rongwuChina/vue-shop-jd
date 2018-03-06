@@ -1,18 +1,22 @@
 <template>
 <!-- 内容区域 -->
        <footer class="clearfix footer-bar ">
+       <router-link to="/">
           <div class="foot-li fL" >
              <div class="foot-icon" v-on:click="onSearch">
              <i class="fa fa-home" v-bind:class="active==0 ? 'active' : ''"></i>
              </div>
              <span class="foot-text" v-bind:class="active==0 ? 'active' : ''">首页</span>
           </div>
+       </router-link>
+          <router-link to="/category">
           <div class="foot-li fL">
              <div class="foot-icon" v-on:click="onSearch">
              <i class="fa fa-navicon" v-bind:class="active==1 ? 'active' : ''"></i>
              </div>
              <span class="foot-text" v-bind:class="active==1 ? 'active' : ''">分类</span>
           </div>
+          </router-link>
           <div class="foot-li fL">
              <div class="foot-icon" v-on:click="onSearch">
              <i class="fa fa-eye" v-bind:class="active==2 ? 'active' : ''"></i>
