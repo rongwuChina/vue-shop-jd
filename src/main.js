@@ -6,6 +6,7 @@ import App from './App'
 import router from './router'
 import './assets/css/fonts.css'
 import './assets/css/base.css'
+import loading from './components/loading'
 
 // import jquery from '../'
 
@@ -15,6 +16,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  loading,
   components: { App },
   template: '<App/>'
 })
