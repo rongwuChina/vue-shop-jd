@@ -1,13 +1,16 @@
 /* $Id : utils.js 5052 2007-02-03 10:30:13Z weberliu $ */
 
-var Browser = new Object();
+module.exports={
 
-Browser.isMozilla = (typeof document.implementation != 'undefined') && (typeof document.implementation.createDocument != 'undefined') && (typeof HTMLDocument != 'undefined');
-Browser.isIE = window.ActiveXObject ? true : false;
-Browser.isFirefox = (navigator.userAgent.toLowerCase().indexOf("firefox") != - 1);
-Browser.isSafari = (navigator.userAgent.toLowerCase().indexOf("safari") != - 1);
-Browser.isOpera = (navigator.userAgent.toLowerCase().indexOf("opera") != - 1);
 
+  var Browser = new Object();
+
+  Browser.isMozilla = (typeof document.implementation != 'undefined') && (typeof document.implementation.createDocument != 'undefined') && (typeof HTMLDocument != 'undefined');
+  Browser.isIE = window.ActiveXObject ? true : false;
+  Browser.isFirefox = (navigator.userAgent.toLowerCase().indexOf("firefox") != - 1);
+  Browser.isSafari = (navigator.userAgent.toLowerCase().indexOf("safari") != - 1);
+  Browser.isOpera = (navigator.userAgent.toLowerCase().indexOf("opera") != - 1);
+  
 var Utils = new Object();
 
 Utils.htmlEncode = function(text)
@@ -206,4 +209,5 @@ function cleanWhitespace(element)
    if (node.nodeType == 3 && !/\S/.test(node.nodeValue))
      element.removeChild(node);
    }
+}
 }

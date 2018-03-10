@@ -33,37 +33,32 @@ export default new Router({
     	path:'/category',
     	name:'category',
     	component: category
+    },{
+    	path:'/product/productdetail',
+    	name:'productdetail',
+    	component: productdetail
     }
     ,{
-        	path:'/product/productdetail',
-        	name:'productdetail',
-        	component: productdetail
+        	path:'/user/:id',
+        	component: my,
+        	children:[{
+                    path:'register',
+                    component: register
+        	},{
+        		path:'login',
+        		component: login
+        	}]
+        },
+    ,{
+        	path:'/discover',
+        	name:'discover',
+        	component: discover
         }
-        ,{
-            	path:'/user/my',
-            	name:'my',
-            	component: my
-            }
-            ,{
-                	path:'/user/login',
-                	name:'login',
-                	component: login
-                }
-                ,{
-                    	path:'/user/register',
-                    	name:'register',
-                    	component: register
-                    }
-                    ,{
-                        	path:'/discover',
-                        	name:'discover',
-                        	component: discover
-                        }
-                        ,{
-                            	path:'/productcart',
-                            	name:'productcart',
-                            	component: productcart
-                            }
+    ,{
+        	path:'/productcart',
+        	name:'productcart',
+        	component: productcart
+        }
   ]
 })
 

@@ -1,8 +1,8 @@
-import loading from './loading.vue'
+import myloading from './loading.vue'
 
 const loading={
      install: function(Vue){
-        Vue.component('loading',loading);
+        Vue.component('loading',myloading);
      }
 }
 

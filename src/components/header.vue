@@ -63,6 +63,7 @@
                      	width: 100%;
                      	box-shadow: 0 -1px 10px #8a8a8a;
                      	z-index:10000;
+                     	max-width: 800px;
                      }
 	   	.db_header .db_header_main{
 	   		position: relative;

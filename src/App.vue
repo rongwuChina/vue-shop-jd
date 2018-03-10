@@ -2,13 +2,19 @@
   <div id="app">
 
     <router-view/>
-
+    <loading v-show="loading==1"></loading>
   </div>
 </template>
-
+  <loading></loading>
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  beforeCreate: function(){
+          this.loading=1
+  },
+  created:function(){
+      this.loading=0
+  }
 }
 </script>
 

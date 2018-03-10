@@ -76,6 +76,7 @@
               background: white;
               padding: 6px 0;
               z-index: 10000;
+              max-width: 800px;
           }
    	.foot-li.fL {
           width: 20%;

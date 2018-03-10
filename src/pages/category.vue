@@ -1,52 +1,43 @@
-	
-	<template>
-	<div class="top-contain">
 
-		<headerbar>
-			
-		</headerbar>
-		<router-link to="/" replace>
-		<i class="fa fa-home"></i>
-		</router-link>	
-		<div class="catecontent clearfix">
-			<ul class="fL tableft">
-				<li v-for="(categoryli,index) in category" v-bind:id="index" v-bind:class="showid==index ? 'active' : ''" v-on:click="choose($event)">
-					{{categoryli.categoryname}}
-				</li>
-			</ul>
-			<div  class="fL clearfix tabright">
+		<template>
+		<div class="top-contain">
 
-				<div  v-for="(categoryli,index2) in category" class="fL" v-if="showid==index2">
-				
-					
-					<div v-for="categorypro in categoryli.protabbox" class="protabbox">
-					           <p class="text-left">{{categorypro.protabname}}</p>
-					           <div class="protabs clearfix">
-					           	
-					           	
-					           	<div class="fL protab"  v-for="catprotabli in categorypro.protab" >
-					           	           <router-link to="/product/productdetail?id=catprotabli.id">
-					           			<img v-bind:src="catprotabli.proimg" alt="" />
-					           			<p>{{catprotabli.proname}}</p>
+			<headerbar></headerbar>
+			<router-link to="/" replace> <i class="fa fa-home"></i>
+			</router-link>
+			<div class="catecontent clearfix">
+				<ul class="fL tableft">
+					<li v-for="(categoryli,index) in category" v-bind:id="index" v-bind:class="showid==index ? 'active' : ''" v-on:click="choose($event)">{{categoryli.categoryname}}</li>
+				</ul>
+				<div  class="fL clearfix tabright">
 
-					           		</router-link>
-					           	</div>
+					<div  v-for="(categoryli,index2) in category" class="fL" v-if="showid==index2">
 
-					           </div>
-						
-						
+						<div v-for="categorypro in categoryli.protabbox" class="protabbox">
+							<p class="text-left">{{categorypro.protabname}}</p>
+							<div class="protabs clearfix">
+
+								<div class="fL protab"  v-for="catprotabli in categorypro.protab" >
+									<router-link to="/product/productdetail?id=catprotabli.id">
+										<img v-bind:src="catprotabli.proimg" alt="" />	
+										<p>{{catprotabli.proname}}</p>
+
+									</router-link>
+								</div>
+
+							</div>
+
+						</div>
+
 					</div>
-
 				</div>
+
 			</div>
-			
+
 		</div>
 
-
-	</div>
-	
 	</template>
-           
+
 	<script type="text/javascript" charset="utf-8">
                     import headerbar from "../components/header.vue"
                     

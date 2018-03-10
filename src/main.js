@@ -8,15 +8,15 @@ import './assets/css/fonts.css'
 import './assets/css/base.css'
 import loading from './components/loading'
 
-// import jquery from '../'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+
+Vue.use(loading);
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  loading,
   components: { App },
   template: '<App/>'
 })
