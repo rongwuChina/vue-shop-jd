@@ -1,30 +1,137 @@
-a,blockquote,body,dd,div,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,html,img,input,label,li,ol,p,pre,td,th,ul{margin:0;padding:0;border:0;outline:0}
-body{line-height:auto;font-size:15px;box-sizing:border-box}
-h1,h2,h3,h4,h5,h6{font-size:15px;padding:0;margin:0}
-ol,ul{list-style:none}
-a{text-decoration:none;outline:0;color: #ff6607;}
-a:hover{text-decoration:none;outline:0}
-a:focus{outline:0;text-decoration:none}
-html{font-size:15px;}  /*1 rem*/
-.clearfix{zoom:1}
-.clearfix:after,.clearfix:before{display:table;line-height:0;content:""}
-.clearfix:after{clear:both}
+a,
+blockquote,
+body,
+dd,
+div,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+img,
+input,
+label,
+li,
+ol,
+p,
+pre,
+td,
+th,
+ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0
+}
 
-.fR{float:right}
-.fL{float:left}
-body{background:#f0f2f5;width:100%;max-width:800px;margin:0 auto;box-sizing:border-box;}
-p{font-size: 1rem;color:#333;}
-header{margin-bottom:10px;background: red;padding:6px 0;}
-img{width:100%;}
+body {
+    line-height: auto;
+    font-size: 15px;
+    box-sizing: border-box
+}
 
-.top-contain:before{
-          content:'';
-          display: block;
-          height:52px;
-    }
-.bottom-contain:after{
-          content:'';
-          display: block;
-          height:63px;
-    }
-    .text-left{text-align: left}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 15px;
+    padding: 0;
+    margin: 0
+}
+
+ol,
+ul {
+    list-style: none
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+    color: #ff6607;
+}
+
+a:hover {
+    text-decoration: none;
+    outline: 0
+}
+
+a:focus {
+    outline: 0;
+    text-decoration: none
+}
+
+html {
+    font-size: 15px;
+}
+
+/*1 rem*/
+
+.clearfix {
+    zoom: 1
+}
+
+.clearfix:after,
+.clearfix:before {
+    display: table;
+    line-height: 0;
+    content: ""
+}
+
+.clearfix:after {
+    clear: both
+}
+
+.fR {
+    float: right
+}
+
+.fL {
+    float: left
+}
+
+body {
+    background: #f0f2f5;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+p {
+    font-size: 1rem;
+    color: #333;
+}
+
+header {
+    margin-bottom: 10px;
+    background: red;
+    padding: 6px 0;
+}
+
+img {
+    width: 100%;
+}
+
+.top-contain:before {
+    content: '';
+    display: block;
+    height: 52px;
+}
+
+.bottom-contain:after {
+    content: '';
+    display: block;
+    height: 63px;
+}
+
+.text-left {
+    text-align: left
+}
