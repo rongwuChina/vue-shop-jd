@@ -1,0 +1,6 @@
+new vue.CreateStore({
+    modules:{
+
+    },
+    
+})

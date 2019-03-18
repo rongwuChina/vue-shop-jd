@@ -1,0 +1,32 @@
+@import "~@/assets/css/base";
+$black: #333333;
+%tcenter {
+  text-align: center;
+}
+@mixin marlft($width) {
+  margin-left: $width;
+}
+
+.flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.text-center {
+  @extend %tcenter;
+}
+%font-bold {
+  color: $black;
+  font-weight: bold;
+}
+.classname {
+  @extend %font-bold;
+}
+/* 头部样式 */
+.header-span{
+    @include marlft(20px);
+}
+.header-bclr{
+    background-color: $black;
+}

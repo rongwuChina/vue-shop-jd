@@ -3,7 +3,7 @@
 module.exports={
 
 
-  var Browser = new Object();
+  let Browser = new Object();
 
   Browser.isMozilla = (typeof document.implementation != 'undefined') && (typeof document.implementation.createDocument != 'undefined') && (typeof HTMLDocument != 'undefined');
   Browser.isIE = window.ActiveXObject ? true : false;
@@ -11,7 +11,7 @@ module.exports={
   Browser.isSafari = (navigator.userAgent.toLowerCase().indexOf("safari") != - 1);
   Browser.isOpera = (navigator.userAgent.toLowerCase().indexOf("opera") != - 1);
   
-var Utils = new Object();
+let Utils = new Object();
 
 Utils.htmlEncode = function(text)
 {

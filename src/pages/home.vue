@@ -69,8 +69,11 @@
     </div>
 
     <footerbar active="0"></footerbar>
-    <router-link to="/user/1/register">register</router-link>
-    <router-link to="/user/1/login">login</router-link>
+    <keep-alive>
+      <router-link to="/user/1/register">register</router-link>
+      <router-link to="/user/1/login">login</router-link>
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 <script type="text/javascript" charset="utf-8">
@@ -157,8 +160,5 @@ h2 {
 .graphic-wz {
   font-size: 0.8rem;
   line-height: 28px;
-}
-a {
-  color: #333;
 }
 </style>

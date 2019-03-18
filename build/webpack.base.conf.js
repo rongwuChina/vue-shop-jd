@@ -3,6 +3,7 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 
 var webpack = require("webpack");
 
@@ -82,9 +83,21 @@ module.exports = {
   },
   // 增加一个plugins
   plugins: [
+    //允许使用外部框架-jquery
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
+    }),
+    
+    //optimize
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'js/vendor.chunk.[hash:8].js'
+    }),
+    new OptimizeCSSPlugin({
+      cssProcessorOptions: config.build.productionSourceMap
+        ? { safe: true, map: { inline: false } }
+        : { safe: true }
     })
   ],
   node: {

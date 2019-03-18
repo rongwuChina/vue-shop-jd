@@ -6,14 +6,15 @@ import App from './App'
 import router from './router'
 import './assets/css/fonts.css'
 import './assets/css/base.css'
-import loading from './components/loading'
+import loading from '@/components/global/loading'
 import footer from '@/components/global/footer'
 
 Vue.config.productionTip = false;
 
+//定义全局组件
 Vue.use(loading);
-
 Vue.use(footer);
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
@@ -21,4 +22,3 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
-

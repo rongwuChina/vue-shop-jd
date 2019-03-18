@@ -17,26 +17,33 @@
         <span class="foot-text" v-bind:class="active==1 ? 'active' : ''">分类</span>
       </div>
     </router-link>
-    <div class="foot-li fL">
-      <div class="foot-icon" v-on:click="onSearch">
-        <i class="fa fa-eye" v-bind:class="active==2 ? 'active' : ''"></i>
+    <router-link to="/discover">
+      <div class="foot-li fL">
+        <div class="foot-icon" v-on:click="onSearch">
+          <i class="fa fa-eye" v-bind:class="active==2 ? 'active' : ''"></i>
+        </div>
+        <span class="foot-text" v-bind:class="active==2 ? 'active' : ''">发现</span>
       </div>
-      <span class="foot-text" v-bind:class="active==2 ? 'active' : ''">发现</span>
-    </div>
-    <div class="foot-li fL">
-      <div class="foot-icon" v-on:click="onSearch">
-        <i class="fa fa-shopping-cart" v-bind:class="active==3 ? 'active' : ''"></i>
+    </router-link>
+    <router-link to="/productcart">
+      <div class="foot-li fL">
+        <div class="foot-icon" v-on:click="onSearch">
+          <i class="fa fa-shopping-cart" v-bind:class="active==3 ? 'active' : ''"></i>
+        </div>
+        <span class="foot-text" v-bind:class="active==3 ? 'active' : ''">购物车</span>
       </div>
-      <span class="foot-text" v-bind:class="active==3 ? 'active' : ''">购物车</span>
-    </div>
-    <div class="foot-li fL">
-      <div class="foot-icon" v-on:click="onSearch">
-        <i class="fa fa-user-o" v-bind:class="active==4 ? 'active' : ''"></i>
+    </router-link>
+    <router-link to="/user/1232">
+      <div class="foot-li fL">
+        <div class="foot-icon" v-on:click="onSearch">
+          <i class="fa fa-user-o" v-bind:class="active==4 ? 'active' : ''"></i>
+        </div>
+        <span class="foot-text" v-bind:class="active==4 ? 'active' : ''">我的</span>
       </div>
-      <span class="foot-text" v-bind:class="active==4 ? 'active' : ''">我的</span>
-    </div>
+    </router-link>
   </footer>
 </template>
+
 <script>
 export default {
   name: "headerbar",

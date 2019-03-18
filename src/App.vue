@@ -4,7 +4,6 @@
     <loading v-show="loading==1"></loading>
   </div>
 </template>
-  <loading></loading>
 <script>
 export default {
   name: 'App',

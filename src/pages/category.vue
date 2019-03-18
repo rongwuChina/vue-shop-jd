@@ -1,9 +1,6 @@
 <template>
   <div class="top-contain">
     <headerbar></headerbar>
-    <router-link to="/" replace>
-      <i class="fa fa-home"></i>
-    </router-link>
     <div class="catecontent clearfix">
       <ul class="fL tableft">
         <li
@@ -12,10 +9,11 @@
           v-bind:id="index"
           v-bind:class="showid==index ? 'active' : ''"
           v-on:click="choose($event)"
+          class="text-center"
         >{{categoryli.categoryname}}</li>
       </ul>
-      <div class="fL clearfix tabright">
-        <div v-for="(categoryli,index2) in category" :key="'categoryli'+index2" class="fL">
+      <ul class="fR clearfix tabright">
+        <ol v-for="(categoryli,index2) in category" :key="'categoryli'+index2" class="fL">
           <div
             v-show="showid==index2"
             v-for="(categorypro,index3) in categoryli.protabbox"
@@ -23,38 +21,38 @@
             class="protabbox"
           >
             <p class="text-left">{{categorypro.protabname}}</p>
-            <div class="protabs clearfix">
-              <div
-                class="fL protab"
+            <ul class="protabs flexbox clearfix">
+              <ol
+                class="text-center protab"
                 v-for="(catprotabli,indexs) in categorypro.protab"
                 :key="'catprotabli'+indexs"
               >
                 <router-link to="/product/productdetail?id=catprotabli.id">
                   <img v-bind:src="catprotabli.proimg" alt>
-                  <p>{{catprotabli.proname}}</p>
+                  <p class="classname">{{catprotabli.proname}}</p>
                 </router-link>
-              </div>
-            </div>
+              </ol>
+            </ul>
           </div>
-        </div>
-      </div>
+        </ol>
+      </ul>
     </div>
-    <footerbar active='1'></footerbar>
+    <footerbar active="1"></footerbar>
   </div>
 </template>
 <script>
-import category from "@/server/category.js";
-export default category;
+import category from "@/server/category";
+import "@/assets/css/style";
 
+export default category;
 $(function() {
   $(".top-contain").css("height", $(window).height());
 });
 $(".top-contain").css("height", $(window).height());
-
 </script>
 
 
-<style type="text/css">
+<style lang="scss" scoped>
 .top-contain {
   height: 100%;
   overflow: hidden;
@@ -66,6 +64,9 @@ $(".top-contain").css("height", $(window).height());
   height: 100%;
   overflow-y: scroll;
   padding-bottom: 52px;
+  position: fixed;
+  left: 0;
+  top: 40px;
 }
 .tableft li {
   padding: 15px 0;
@@ -76,10 +77,10 @@ $(".top-contain").css("height", $(window).height());
 .tableft .active {
   color: red;
 }
-.catecontent.clearfix {
+.catecontent {
   box-sizing: border-box;
   padding-right: 10px;
-  height: 100%;
+  height: calc(100% - 61px);
 }
 
 /* 左边tab商城 样式*/
@@ -87,12 +88,14 @@ $(".top-contain").css("height", $(window).height());
   margin-top: 15px;
 }
 .tabright {
-  width: 78%;
+  width: calc(78% - 10px);
   padding-left: 10px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   height: 100%;
   overflow-y: scroll;
   padding-bottom: 52px;
+  background: white;
 }
 .protabbox {
 }
