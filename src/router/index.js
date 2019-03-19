@@ -20,6 +20,11 @@ const category = resolve => {
 		resolve(module);
 	});
 };
+const discover = resolve => {
+	import('@/pages/discover').then(module => {
+		resolve(module);
+	});
+};
 const productdetail = resolve => {
 	import('@/pages/product/productdetail').then(module => {
 		resolve(module);
@@ -68,6 +73,10 @@ export default new Router({
 			path: '/category',
 			name: 'category',
 			component: category
+		}, {
+			path: '/discover',
+			name: 'discover',
+			component: discover
 		}, {
 			path: '/product/productdetail',
 			name: 'productdetail',

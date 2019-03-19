@@ -8,6 +8,7 @@ import './assets/css/fonts.css'
 import './assets/css/base.css'
 import loading from '@/components/global/loading'
 import footer from '@/components/global/footer'
+import store from '@/vuex/index.js'
 
 Vue.config.productionTip = false;
 
@@ -19,6 +20,7 @@ Vue.use(footer);
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

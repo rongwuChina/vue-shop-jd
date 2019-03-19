@@ -100,7 +100,6 @@ html {
 body {
     background: #f0f2f5;
     width: 100%;
-    max-width: 800px;
     margin: 0 auto;
     box-sizing: border-box;
 }

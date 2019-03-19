@@ -79,8 +79,7 @@ export default {
   box-shadow: 0 1px 10px #8a8a8a;
   background: white;
   padding: 6px 0;
-  z-index: 10000;
-  max-width: 800px;
+  z-index: 1000;
 }
 .foot-li.fL {
   width: 20%;

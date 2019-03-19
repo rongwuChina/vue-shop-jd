@@ -1,5 +1,11 @@
 import headerbar from "@/components/header.vue"
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import { mapState } from 'vuex'
+
+//定义多个state并插入到computed中
+const mapstate = mapState({
+    data: state => state.config.data
+})
 
 export default {
     name: "home",
@@ -80,6 +86,9 @@ export default {
                 autoHeight: true
             }
         };
+    },
+    computed: {
+        ...mapstate
     },
     components: {
         headerbar,
