@@ -1,17 +1,17 @@
-	<template>
+<template>
   <div id="header" class="db_header">
     <!-- 内容区域 -->
     <div class="header-bclr">
       <!-- logo和搜索icon -->
       <div class="db_logo_box" v-show="!isSearch">
-        <span class="header-span">精品</span>
+        <span class="header-span">{{ tips }}</span>
         <input
           class="db_logo_text"
           type="text"
           placeholder="searchtext"
           v-on:click="onSearch"
           v-model="message"
-        >
+        />
         <div class="db_search_icon" v-on:click="onSearch">
           <i class="fa fa-search"></i>
         </div>
@@ -24,7 +24,7 @@
           placeholder="searchtext"
           class="db_logo_text ipt_search"
           v-model="message"
-        >
+        />
         <!-- <span class="btn_search" v-on:click="onSubmit"><i class="fa fa-search"></i></span> -->
         <div class="db_search_icon" v-on:click="onSubmit">
           <i class="fa fa-search"></i>
@@ -38,9 +38,13 @@
       <ul class="clearfix">
         <ol
           class="fL tabli"
-          v-for="(hotseachli,index) in hotsearch"
-          :key="'hostsearchli'+index"
-        >{{hotseachli}}</ol>
+          v-for="(hotseachli, index) in hotsearch"
+          :key="'hostsearchli' + index"
+        >
+          {{
+            hotseachli
+          }}
+        </ol>
       </ul>
     </div>
     <!-- /header -->
@@ -51,27 +55,41 @@ import "@/assets/css/style.scss";
 
 export default {
   name: "headerbar",
+  props: ["stat"],
   data() {
     return {
+      tips: "精品",
       searchtext: "云南白药牙膏",
       isSearch: false,
       message: "云南白药牙膏",
-      hotsearch: ["照片扫描仪", "无线扩音器", "充电宝", "空气净化器"]
+      hotsearch: ["照片扫描仪", "无线扩音器", "充电宝", "空气净化器"],
     };
   },
   methods: {
-    onSearch: function() {
+    onSearch: function () {
       this.isSearch = !this.isSearch;
       $(".ipt_search").focus();
     },
-    onTapMask: function() {
+    onTapMask: function () {
       this.isSearch = !this.isSearch;
     },
-    onSubmit: function() {
+    onSubmit: function () {
       let v = document.querySelector(".ipt_search").value;
       alert(v);
-    }
-  }
+    },
+  },
+  watch: {
+    "stat.data": {
+      // console.log(a + '精品' + b);
+      // this.tips = a + '精品' + b;  // a为新值，b为旧值
+      // console.log(this.tips);
+      handler(now, prev) {
+        console.log("stat.data change", now);
+        this.tips = now + "精品" + prev;
+      },
+      immediate: false, // 初次监听即执行
+    },
+  },
 };
 </script>
 <style scoped>

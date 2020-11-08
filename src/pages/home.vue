@@ -1,8 +1,8 @@
-  
+
   <template>
   <div class="home-contain">
-    <headerbar></headerbar>
-    <div>vuex全局管理数据，项目点赞次数：{{data}}</div>
+    <headerbar :stat={data}></headerbar>
+    <div>vuex全局管理数据， 项目点赞次数：{{data}}</div>
     <button @click="$store.commit('setdata',1)">点赞</button>
     <swiper :options="swiperOption" ref="mySwiper">
       <!-- slides -->
